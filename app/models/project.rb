@@ -1,3 +1,6 @@
 class Project < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :user
+
+  has_many :user_projects
+  has_many :users, through: :user_projects
 end
