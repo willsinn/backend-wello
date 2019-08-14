@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  objective: MyString
+  belongs_to: 
+
+two:
+  objective: MyString
+  belongs_to: 
