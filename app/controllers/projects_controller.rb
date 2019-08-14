@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
   def create
     project = Project.create(project_params)
     join_project = UserProject.create(user_id: params[:user_id], project_id: project.id)
-    render json: project
+    render json: project.items
   end
 
   def update
