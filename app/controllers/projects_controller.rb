@@ -5,6 +5,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    project = Project.find(params[:id])
+    render json: project
   end
 
   def create
@@ -20,6 +22,6 @@ class ProjectsController < ApplicationController
   end
     private
     def project_params
-      params.permit( :user_id, :title, :description )
+      params.permit( :user_id, :title )
     end
 end
