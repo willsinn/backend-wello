@@ -12,13 +12,15 @@ class ProjectsController < ApplicationController
   def create
     project = Project.create(project_params)
     join_project = UserProject.create(user_id: params[:user_id], project_id: project.id)
-    render json: project.items
+    render json: project
   end
 
   def update
   end
 
   def destroy
+    project = Project.find(project_params[:id])
+    project.destroy
   end
     private
     def project_params
