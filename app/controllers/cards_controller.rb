@@ -11,7 +11,7 @@ class CardsController < ApplicationController
     card = Project.find(params[:id])
     card.destroy
   end
-  private_params
+  private
     def card_params
       params.permit(:item_id, :subject, :detail)
     end
