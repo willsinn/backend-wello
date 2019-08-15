@@ -1,4 +1,12 @@
 class CardsController < ApplicationController
+  def index
+    cards = Item.all
+    render json: cards
+  end
+  def show
+    card = Item.find(params[:id])
+    render json: card
+  end
   def create
     card = Card.create(card_params)
     render json: card

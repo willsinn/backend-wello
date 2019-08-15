@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post 'project/:id/items/new', to: 'items#create'
   post 'items/:id/delete',to: 'items#destroy'
+    get '/project/:id/item/:id', to: 'items#show'
+
 
 
   post 'item/:id/cards/new', to: 'cards#create'
