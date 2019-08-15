@@ -19,11 +19,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    project = Project.find(project_params[:id])
+    project = Project.find(params[:id])
     project.destroy
   end
     private
     def project_params
-      params.permit( :user_id, :title, :description )
+      params.permit(:user_id, :title, :description )
     end
 end
