@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   post 'item/:id/cards/new', to: 'cards#create'
   post 'cards/:id/delete', to: 'cards#destroy'
   get '/user/:id', to: 'users#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

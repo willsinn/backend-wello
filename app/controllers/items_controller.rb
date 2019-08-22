@@ -1,9 +1,6 @@
 class ItemsController < ApplicationController
   def index
     items = Item.all
-    items_cards = items.map do |item|
-      byebug
-    end
     render json: items
   end
   def show

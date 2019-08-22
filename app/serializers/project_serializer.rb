@@ -7,10 +7,10 @@ class ProjectSerializer < ActiveModel::Serializer
       { id: item.id,
         objective: item.objective,
         cards: item.cards.map do |card|
-        { id:card.id,
-          item_id: item.id,
+        { id: card.id,
           subject: card.subject,
-          detail: card.detail }
+          detail: card.detail,
+          item_id: item.id }
       end }
     end
   end
