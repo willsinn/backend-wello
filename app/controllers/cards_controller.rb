@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    card = Project.find(params[:id])
+    card = Card.find(params[:id])
     card.destroy
   end
   private

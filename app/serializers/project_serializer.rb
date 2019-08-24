@@ -6,6 +6,7 @@ class ProjectSerializer < ActiveModel::Serializer
     self.object.items.map do |item|
       { id: item.id,
         objective: item.objective,
+        project_id: self.object.id,
         cards: item.cards.map do |card|
         { id: card.id,
           subject: card.subject,
