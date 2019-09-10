@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     render json: user
   end
   def create
-    user = Project.create(user_params)
+    user = User.create(user_params)
     render json: user
   end
   private
