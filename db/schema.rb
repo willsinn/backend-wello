@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   create_table "projects", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
-    t.string "description"
+    t.string "background"
+    t.string "team_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
