@@ -1,17 +1,18 @@
 class BoardSerializer < ActiveModel::Serializer
   attributes :id, :user_id, :title, :background, :team_name
-  has_many :items
+  has_many :cards
 
-  def items
-    self.object.items.map do |item|
-      { id: item.id,
-        objective: item.objective,
+  def cards
+    self.object.cards.map do |card|
+      { id: card.id,
+        goal: card.goal,
+        summary: card.summary,
         board_id: self.object.id,
-        tasks: item.tasks.map do |task|
+        tasks: card.tasks.map do |task|
         { id: task.id,
           desc: task.desc,
           note: task.note,
-          item_id: item.id }
+          card_id: card.id }
       end }
     end
   end
