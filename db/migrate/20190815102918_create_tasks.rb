@@ -3,7 +3,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
     create_table :tasks do |t|
       t.string :desc
       t.string :note
-      t.belongs_to :item, foreign_key: true
+      t.belongs_to :card, foreign_key: true
 
 
       t.timestamps

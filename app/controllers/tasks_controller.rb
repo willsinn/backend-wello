@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
   def index
-    tasks = Item.all
+    tasks = Card.all
     render json: tasks
   end
   def show
-    task = Item.find(params[:id])
+    task = Card.find(params[:id])
     render json: task
   end
   def create
@@ -24,6 +24,6 @@ class TasksController < ApplicationController
   end
   private
     def task_params
-      params.permit(:item_id, :desc, :note)
+      params.permit(:card_id, :desc, :note)
     end
 end

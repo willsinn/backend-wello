@@ -25,21 +25,21 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
-  create_table "cards", force: :cascade do |t|
-    t.string "subject"
-    t.string "detail"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_cards_on_item_id"
-  end
-
   create_table "items", force: :cascade do |t|
     t.bigint "board_id"
     t.string "objective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_items_on_board_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "desc"
+    t.string "note"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_tasks_on_item_id"
   end
 
   create_table "user_boards", force: :cascade do |t|
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "cards", "items"
   add_foreign_key "items", "boards"
+  add_foreign_key "tasks", "items"
   add_foreign_key "user_boards", "boards"
   add_foreign_key "user_boards", "users"
 end
