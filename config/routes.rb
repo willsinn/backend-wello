@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get '/board/:id/items', to: 'items#index'
   put '/item/update/:id', to: 'items#update'
 
-  post '/item/:id/cards/new', to: 'cards#create'
-  post '/cards/delete/:id', to: 'cards#destroy'
-  put '/card/update/:id', to: 'cards#update'
+  post '/item/:id/tasks/new', to: 'tasks#create'
+  post '/tasks/delete/:id', to: 'tasks#destroy'
+  put '/task/update/:id', to: 'tasks#update'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

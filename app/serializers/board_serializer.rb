@@ -7,10 +7,10 @@ class BoardSerializer < ActiveModel::Serializer
       { id: item.id,
         objective: item.objective,
         board_id: self.object.id,
-        cards: item.cards.map do |card|
-        { id: card.id,
-          subject: card.subject,
-          detail: card.detail,
+        tasks: item.tasks.map do |task|
+        { id: task.id,
+          desc: task.desc,
+          note: task.note,
           item_id: item.id }
       end }
     end

@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
   belongs_to :board
-  has_many :cards, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 end
