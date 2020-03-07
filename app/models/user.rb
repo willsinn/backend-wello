@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :projects
+  has_many :boards
 
-  has_many :user_projects
-  has_many :projects, through: :user_projects
+  has_many :user_boards
+  has_many :boards, through: :user_boards
 end

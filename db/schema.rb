@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.bigint "project_id"
+    t.bigint "board_id"
     t.string "objective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_items_on_project_id"
+    t.index ["board_id"], name: "index_items_on_board_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
 
   create_table "user_projects", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "project_id"
+    t.bigint "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_user_projects_on_project_id"
+    t.index ["board_id"], name: "index_user_projects_on_board_id"
     t.index ["user_id"], name: "index_user_projects_on_user_id"
   end
 

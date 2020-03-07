@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   def index
     items = Item.all
-    project = Project.find(params[:project_id])
-    project_items = project.items.map do |item|
-      item.project_id == project.id
+    board = Board.find(params[:board_id])
+    board_items = board.items.map do |item|
+      item.board_id == board.id
     end
-    render json: project_items
+    render json: board_items
   end
   def show
     item = Item.find(params[:id])
@@ -28,6 +28,6 @@ class ItemsController < ApplicationController
   end
   private
     def item_params
-      params.permit(:project_id, :objective)
+      params.permit(:board_id, :objective)
     end
 end

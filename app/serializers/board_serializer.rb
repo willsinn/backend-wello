@@ -1,4 +1,4 @@
-class ProjectSerializer < ActiveModel::Serializer
+class BoardSerializer < ActiveModel::Serializer
   attributes :id, :user_id, :title, :background, :team_name
   has_many :items
 
@@ -6,7 +6,7 @@ class ProjectSerializer < ActiveModel::Serializer
     self.object.items.map do |item|
       { id: item.id,
         objective: item.objective,
-        project_id: self.object.id,
+        board_id: self.object.id,
         cards: item.cards.map do |card|
         { id: card.id,
           subject: card.subject,

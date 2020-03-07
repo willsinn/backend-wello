@@ -1,6 +1,6 @@
-class CreateProjects < ActiveRecord::Migration[5.2]
+class CreateBoards < ActiveRecord::Migration[5.2]
   def change
-    create_table :projects do |t|
+    create_table :boards do |t|
       t.references :user
       t.string :title
       t.string :background

@@ -1,4 +1,4 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :objective, :project_id
+  attributes :id, :objective, :board_id
   has_many :cards
 end
