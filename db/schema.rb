@@ -15,6 +15,16 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "boards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.string "background"
+    t.string "team_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
   create_table "cards", force: :cascade do |t|
     t.string "subject"
     t.string "detail"
@@ -32,23 +42,13 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
     t.index ["board_id"], name: "index_items_on_board_id"
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "title"
-    t.string "background"
-    t.string "team_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_projects_on_user_id"
-  end
-
-  create_table "user_projects", force: :cascade do |t|
+  create_table "user_boards", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "board_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["board_id"], name: "index_user_projects_on_board_id"
-    t.index ["user_id"], name: "index_user_projects_on_user_id"
+    t.index ["board_id"], name: "index_user_boards_on_board_id"
+    t.index ["user_id"], name: "index_user_boards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   end
 
   add_foreign_key "cards", "items"
-  add_foreign_key "items", "projects"
-  add_foreign_key "user_projects", "projects"
-  add_foreign_key "user_projects", "users"
+  add_foreign_key "items", "boards"
+  add_foreign_key "user_boards", "boards"
+  add_foreign_key "user_boards", "users"
 end
