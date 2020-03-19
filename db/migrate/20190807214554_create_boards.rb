@@ -3,6 +3,7 @@ class CreateBoards < ActiveRecord::Migration[5.2]
     create_table :boards do |t|
       t.references :user
       t.string :title
+      t.string :board_desc
       t.string :background
       t.string :team_name
 

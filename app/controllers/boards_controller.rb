@@ -16,6 +16,9 @@ class BoardsController < ApplicationController
   end
 
   def update
+    board = Board.find(params[:id])
+    board.update(board_params)
+    render json: board
   end
 
   def destroy
@@ -24,6 +27,6 @@ class BoardsController < ApplicationController
   end
     private
     def board_params
-      params.permit(:user_id, :title, :background, :team_name)
+      params.permit(:user_id, :title, :board_desc, :background, :team_name)
     end
 end

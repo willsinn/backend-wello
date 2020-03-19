@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   create_table "boards", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
+    t.string "board_desc"
     t.string "background"
     t.string "team_name"
     t.datetime "created_at", null: false
@@ -28,15 +29,15 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
   create_table "cards", force: :cascade do |t|
     t.bigint "board_id"
     t.string "goal"
-    t.string "summary"
+    t.string "card_desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_cards_on_board_id"
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "desc"
     t.string "note"
+    t.string "task_desc"
     t.bigint "card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

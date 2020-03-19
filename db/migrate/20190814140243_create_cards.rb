@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
     create_table :cards do |t|
       t.belongs_to :board, foreign_key: true
       t.string :goal
-      t.string :summary
+      t.string :card_desc
 
       t.timestamps
     end
