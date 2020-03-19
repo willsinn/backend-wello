@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   post '/user/:id/boards/new', to: 'boards#create'
   get 'user/:id/board/:id', to: 'boards#show'
   post '/board/delete/:id', to: 'boards#destroy'
-  put '/board/update/:id', to: 'boards#update'
 
   post '/board/:id/cards/new', to: 'cards#create'
   post '/cards/delete/:id', to: 'cards#destroy'
   get '/card/:id', to: 'cards#show'
   get '/board/:id/cards', to: 'cards#index'
   put '/card/update/:id', to: 'cards#update'
+  put '/user/:id/board/update/:id', to: 'boards#update'
+
 
   post '/card/:id/tasks/new', to: 'tasks#create'
   post '/tasks/delete/:id', to: 'tasks#destroy'
