@@ -1,3 +1,3 @@
 class TaskSerializer < ActiveModel::Serializer
-  attributes :id, :desc, :note, :card_id
+  attributes :card_id, :id, :task_desc, :note
 end

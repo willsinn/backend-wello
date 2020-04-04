@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   put '/user/:id/board/:id/update', to: 'boards#update'
   post '/user/:id/board/:id/delete', to: 'boards#destroy'
 
+  get '/card/:id', to: 'cards#show'
   post '/board/:id/cards/new', to: 'cards#create'
   post '/cards/delete/:id', to: 'cards#destroy'
-  get '/card/:id', to: 'cards#show'
   get '/board/:id/cards', to: 'cards#index'
   put '/card/update/:id', to: 'cards#update'
 

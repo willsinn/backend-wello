@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   def index
-    cards = Card.all
+    cards = Board.all
     board = Board.find(params[:board_id])
     board_cards = board.cards.map do |card|
       card.board_id == board.id
