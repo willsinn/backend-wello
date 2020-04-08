@@ -5,16 +5,15 @@ class BoardSerializer < ActiveModel::Serializer
   def cards
     self.object.cards.map do |card|
       { id: card.id,
-        board_id: self.object.id,
         goal: card.goal,
         card_desc: card.card_desc,
-        archived: card.archived
+        archived: card.archived,
+        board_id: self.object.id,
         tasks: card.tasks.map do |task|
         { id: task.id,
-          card_id: card.id,
           note: task.note,
           task_desc: task.task_desc,
-          archived: task.archived }
+          card_id: card.id }
       end }
     end
   end
