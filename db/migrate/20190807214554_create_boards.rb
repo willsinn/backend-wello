@@ -6,6 +6,7 @@ class CreateBoards < ActiveRecord::Migration[5.2]
       t.string :board_desc
       t.string :background
       t.string :team_name
+      t.boolean :archived, default: false
 
       t.timestamps
     end

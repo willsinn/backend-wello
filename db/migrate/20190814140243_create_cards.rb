@@ -4,6 +4,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.belongs_to :board, foreign_key: true
       t.string :goal
       t.string :card_desc
+      t.boolean :archived, default: false
 
       t.timestamps
     end

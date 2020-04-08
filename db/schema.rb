@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
     t.string "board_desc"
     t.string "background"
     t.string "team_name"
+    t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
@@ -30,15 +31,17 @@ ActiveRecord::Schema.define(version: 2019_08_15_102918) do
     t.bigint "board_id"
     t.string "goal"
     t.string "card_desc"
+    t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_cards_on_board_id"
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.bigint "card_id"
     t.string "note"
     t.string "task_desc"
-    t.bigint "card_id"
+    t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_tasks_on_card_id"
