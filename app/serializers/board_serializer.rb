@@ -13,6 +13,7 @@ class BoardSerializer < ActiveModel::Serializer
         { id: task.id,
           note: task.note,
           task_desc: task.task_desc,
+          archived: card.archived,
           card_id: card.id }
       end }
     end
