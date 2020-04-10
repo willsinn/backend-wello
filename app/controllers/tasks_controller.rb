@@ -24,6 +24,6 @@ class TasksController < ApplicationController
   end
   private
     def task_params
-      params.permit(:card_id, :note, :task_desc)
+      params.permit(:card_id, :note, :task_desc, :archived)
     end
 end
