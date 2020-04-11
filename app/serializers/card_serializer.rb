@@ -1,4 +1,4 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :board_id, :id, :goal, :card_desc, :archived
+  attributes :id, :goal, :card_desc, :archived, :board_id
   has_many :tasks
 end
