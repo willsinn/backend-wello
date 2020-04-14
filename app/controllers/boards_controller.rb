@@ -21,10 +21,10 @@ class BoardsController < ApplicationController
     render json: board
   end
 
-  def destroy
-    board = Board.find(params[:id])
-    board.destroy
-  end
+  # def destroy
+  #   board = Board.find(params[:id])
+  #   board.destroy
+  # end
     private
     def board_params
       params.permit(:user_id, :title, :board_desc, :background, :team_name, :archived)

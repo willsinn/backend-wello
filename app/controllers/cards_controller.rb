@@ -22,10 +22,10 @@ class CardsController < ApplicationController
     render json: card
   end
 
-  def destroy
-    @card = Card.find(params[:id])
-    @card.destroy
-  end
+  # def destroy
+  #   @card = Card.find(params[:id])
+  #   @card.destroy
+  # end
   private
     def card_params
       params.permit(:board_id, :goal, :card_desc, :archived)

@@ -18,10 +18,10 @@ class TasksController < ApplicationController
     render json: task
   end
 
-  def destroy
-    task = Task.find(params[:id])
-    task.destroy
-  end
+  # def destroy
+  #   task = Task.find(params[:id])
+  #   task.destroy
+  # end
   private
     def task_params
       params.permit(:card_id, :note, :task_desc, :archived)
