@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'labels/index'
+  get 'labels/show'
+  get 'labels/create'
+  get 'labels/update'
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
   
