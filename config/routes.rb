@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'labels/index'
-  get 'labels/show'
-  get 'labels/create'
-  get 'labels/update'
+
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
-  
+
   get '/user/:id/boards', to: 'boards#index'
   post '/user/:id/boards/new', to: 'boards#create'
   get 'user/:id/board/:id', to: 'boards#show'
@@ -24,5 +21,9 @@ Rails.application.routes.draw do
   # post '/tasks/delete/:id', to: 'tasks#destroy'
   put '/task/update/:id', to: 'tasks#update'
 
+  get 'labels/index'
+  get 'labels/show'
+  get 'labels/create'
+  get 'labels/update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
