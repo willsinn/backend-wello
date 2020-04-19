@@ -27,6 +27,6 @@ class BoardsController < ApplicationController
   # end
     private
     def board_params
-      params.permit(:user_id, :title, :board_desc, :background, :team_name, :archived)
+      params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived)
     end
 end
