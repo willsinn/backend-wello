@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_140156) do
     t.string "board_desc"
     t.string "background"
     t.string "team_name"
+    t.boolean "starred", default: false
     t.boolean "archived", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
