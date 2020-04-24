@@ -1,31 +1,31 @@
 class TaskChecklistsController < ApplicationController
   def index
-    items = TaskChecklist.all
-    render json: items
+    lists = TaskChecklist.all
+    render json: lists
   end
 
   def show
-    item = TaskChecklist.find(params[:id])
-    render json: item
+    list = TaskChecklist.find(params[:id])
+    render json: list
   end
 
   def create
-    item = TaskChecklist.create(task_id: params[:task_id])
-    render json: item
+    list = TaskChecklist.create(task_id: params[:task_id])
+    render json: list
   end
 
   def update
-    item = TaskChecklist.find(params[:id])
-    item.update(task_checklist_params)
-    render json: item
+    list = TaskChecklist.find(params[:id])
+    list.update(task_checklist_params)
+    render json: list
   end
 
   def destroy
-    item = TaskChecklist.find(params[:id])
-    item.destroy
+    list = TaskChecklist.find(params[:id])
+    list.destroy
   end
   private
     def task_checklist_params
-      params.permit(:task_id, :item, :completed)
+      params.permit(:task_id, :title)
     end
 end
