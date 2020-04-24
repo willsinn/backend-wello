@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_222459) do
+ActiveRecord::Schema.define(version: 2020_04_24_073645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,18 @@ ActiveRecord::Schema.define(version: 2020_04_23_222459) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "task_checklists", force: :cascade do |t|
-    t.bigint "task_id"
+  create_table "task_checklist_items", force: :cascade do |t|
+    t.bigint "task_checklist_id"
     t.string "item"
     t.boolean "completed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_checklist_id"], name: "index_task_checklist_items_on_task_checklist_id"
+  end
+
+  create_table "task_checklists", force: :cascade do |t|
+    t.bigint "task_id"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_task_checklists_on_task_id"
@@ -89,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_222459) do
   end
 
   add_foreign_key "cards", "boards"
+  add_foreign_key "task_checklist_items", "task_checklists"
   add_foreign_key "task_checklists", "tasks"
   add_foreign_key "task_labels", "labels"
   add_foreign_key "task_labels", "tasks"
