@@ -10,7 +10,7 @@ class TaskChecklistsController < ApplicationController
   end
 
   def create
-    list = TaskChecklist.create(task_id: params[:task_id])
+    list = TaskChecklist.create(task_id: params[:task_id], title: params[:title])
     render json: list
   end
 
@@ -26,6 +26,6 @@ class TaskChecklistsController < ApplicationController
   end
   private
     def task_checklist_params
-      params.permit(:task_id, :title)
+      params.permit( :task_id, :title )
     end
 end

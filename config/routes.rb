@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   # post '/tasks/delete/:id', to: 'tasks#destroy'
   put '/task/update/:id', to: 'tasks#update'
 
+  get'/task/:id/task_checklists', to: "task_checklists#index"
   post '/task/:id/task_checklists/new', to: 'task_checklists#create' 
   get '/task_checklists/:id', to: 'task_checklists#show'
   put '/task_checklists/:id/update', to: 'task_checklists#update'
