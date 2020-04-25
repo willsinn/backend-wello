@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
       end
     
       def create
-        item = Item.create(checklist_id: params[:checklist_id], item: params[:item])
+        item = Item.create(item_params)
         render json: item
       end
     

@@ -1,11 +1,7 @@
 class CardsController < ApplicationController
   def index
-    cards = Board.all
-    board = Board.find(params[:board_id])
-    board_cards = board.cards.map do |card|
-      card.board_id == board.id
-    end
-    render json: board_cards
+    cards = Card.all 
+    render json: cards
   end
   def show
     card = Card.find(params[:id])
