@@ -10,7 +10,7 @@ class TaskChecklistItemsController < ApplicationController
       end
     
       def create
-        item = TaskChecklistItem.create(task_checklist_id: params[:task_checklist_id])
+        item = TaskChecklistItem.create(task_checklist_id: params[:task_checklist_id], item: params[:item])
         render json: item
       end
     
@@ -26,6 +26,6 @@ class TaskChecklistItemsController < ApplicationController
       end
       private
         def task_checklist_item_params
-          params.permit(:task_checklist_id, :item, :completed)
+          params.permit( :task_checklist_id, :item, :completed )
         end
 end

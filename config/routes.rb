@@ -22,13 +22,13 @@ Rails.application.routes.draw do
   # post '/tasks/delete/:id', to: 'tasks#destroy'
   put '/task/update/:id', to: 'tasks#update'
 
-  get '/task/:id/task_checklists', to: "task_checklists#index"
-  post '/task/:id/task_checklists/new', to: 'task_checklists#create' 
-  get '/task_checklists/:id', to: 'task_checklists#show'
-  put '/task_checklists/:id/update', to: 'task_checklists#update'
-  post '/task_checklists/:id/delete', to: 'task_checklists#destroy'
+  get '/task/:id/checklists', to: "checklists#index"
+  post '/task/:id/checklists/new', to: 'checklists#create' 
+  get '/checklists/:id', to: 'checklists#show'
+  put '/checklists/:id/update', to: 'checklists#update'
+  post '/checklists/:id/delete', to: 'checklists#destroy'
 
-  post '/task_checklists/:id/task_checklist_item/new', to: 'task_checklist_item#create' 
+  post '/checklist/:id/task_checklist_item/new', to: 'task_checklist_items#create' 
 
   get 'labels/index'
   get 'labels/show'
