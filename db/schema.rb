@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
     t.index ["board_id"], name: "index_cards_on_board_id"
   end
 
+  create_table "checklists", force: :cascade do |t|
+    t.bigint "task_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_checklists_on_task_id"
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -46,20 +54,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
   end
 
   create_table "task_checklist_items", force: :cascade do |t|
-    t.bigint "task_checklist_id"
+    t.bigint "checklist_id"
     t.string "item"
     t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["task_checklist_id"], name: "index_task_checklist_items_on_task_checklist_id"
-  end
-
-  create_table "task_checklists", force: :cascade do |t|
-    t.bigint "task_id"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_task_checklists_on_task_id"
+    t.index ["checklist_id"], name: "index_task_checklist_items_on_checklist_id"
   end
 
   create_table "task_labels", force: :cascade do |t|
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
   end
 
   add_foreign_key "cards", "boards"
-  add_foreign_key "task_checklist_items", "task_checklists"
-  add_foreign_key "task_checklists", "tasks"
+  add_foreign_key "checklists", "tasks"
+  add_foreign_key "task_checklist_items", "checklists"
   add_foreign_key "task_labels", "labels"
   add_foreign_key "task_labels", "tasks"
   add_foreign_key "tasks", "cards"
