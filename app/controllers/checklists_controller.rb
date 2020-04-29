@@ -1,7 +1,12 @@
 class ChecklistsController < ApplicationController
   def index
     checklists = Checklist.all
-    render json: checklists
+    lists = checklists.filter do |checklist|
+      if checklist.task_id == params[:id].to_i
+        checklist
+      end
+    end
+    render json: lists
   end
 
   def show
@@ -26,6 +31,6 @@ class ChecklistsController < ApplicationController
   end
   private
     def checklist_params
-      params.permit( :task_id, :title )
+      params.permit(:task_id, :title)
     end
 end

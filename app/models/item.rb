@@ -1,3 +1,3 @@
-class TaskItem < ApplicationRecord
+class Item < ApplicationRecord
     belongs_to :checklist
 end
