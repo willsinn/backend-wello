@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
 
   create_table "items", force: :cascade do |t|
     t.bigint "checklist_id"
-    t.string "item"
+    t.string "detail"
     t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
