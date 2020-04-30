@@ -26,6 +26,6 @@ class ItemsController < ApplicationController
       end
       private
         def item_params
-          params.permit( :checklist_id, :item, :completed )
+          params.permit(:checklist_id, :detail, :completed)
         end
 end

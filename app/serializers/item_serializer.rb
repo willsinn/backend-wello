@@ -1,3 +1,3 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id, :item, :completed, :checklist_id
+  attributes :id, :detail, :completed, :checklist_id
 end
