@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get '/checklist/:id/items', to: 'items#index'
   get '/items/:id', to: 'items#show'
   put '/items/:id/update', to: 'items#update'
-  put '/items/:id/delete', to: 'items#destroy'
+  post '/items/:id/delete', to: 'items#destroy'
 
 
 
