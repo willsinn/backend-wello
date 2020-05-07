@@ -35,10 +35,9 @@ Rails.application.routes.draw do
   post '/items/:id/delete', to: 'items#destroy'
 
 
-
-  get 'labels/index'
-  get 'labels/show'
-  get 'labels/create'
-  get 'labels/update'
+  get '/task/:id/labels', to: 'labels#index'
+  get '/label/:id', to: 'labels#show'
+  post '/task/:id/labels/new', to: 'labels#create'
+  put '/label/:id/update', to: 'labels#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
