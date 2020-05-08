@@ -6,3 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(name:"Will")
+
+Label.create(color:"green")
+Label.create(color:"yellow")
+Label.create(color:"orange")
+Label.create(color:"red")
+Label.create(color:"purple")
+Label.create(color:"blue")
+

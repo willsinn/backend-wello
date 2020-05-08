@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
 
@@ -35,7 +33,7 @@ Rails.application.routes.draw do
   post '/items/:id/delete', to: 'items#destroy'
 
 
-  get '/task/:id/labels', to: 'labels#index'
+  get '/labels', to: 'labels#index'
   get '/label/:id', to: 'labels#show'
   post '/task/:id/labels/new', to: 'labels#create'
   put '/label/:id/update', to: 'labels#update'

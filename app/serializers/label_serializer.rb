@@ -1,3 +1,3 @@
 class LabelSerializer < ActiveModel::Serializer
-  attributes :id, :name, :color, :task_id
+  attributes :id, :name, :color
 end
