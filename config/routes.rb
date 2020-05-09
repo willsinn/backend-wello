@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   get '/labels', to: 'labels#index'
   get '/label/:id', to: 'labels#show'
-  post '/task/:id/labels/new', to: 'labels#create'
+  post '/task/:id/label/:id', to: 'labels#create'
   put '/label/:id/update', to: 'labels#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
