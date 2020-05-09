@@ -37,7 +37,9 @@ Rails.application.routes.draw do
   get '/task_labels', to: 'labels#task_labels'
   get '/label/:id', to: 'labels#show'
   post '/task/:id/label/:id', to: 'labels#create'
-  post '/task_label/:id/delete', to: 'labels#destroy'
   put '/label/:id/update', to: 'labels#update'
+
+  post '/task_label/:id/delete', to: 'labels#destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
