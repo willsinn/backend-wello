@@ -10,8 +10,8 @@ class LabelsController < ApplicationController
   end
 
   def create
-    join_table = TaskLabel.create(task_id: params[:task_id], label_id: params[:id])
-    render json: join_label
+    task_label = TaskLabel.create(task_id: params[:task_id], label_id: params[:id])
+    render json: task_label
   end
 
   def update
