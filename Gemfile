@@ -48,4 +48,5 @@ gem "active_model_serializers", "~> 0.10.10"
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
+gem 'simple_command'
 
