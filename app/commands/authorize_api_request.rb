@@ -30,4 +30,4 @@ class AuthorizeApiRequest
       end
       nil
     end
-  end
+end

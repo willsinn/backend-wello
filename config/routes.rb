@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post 'authenticate', to: 'authentication#authenticate'
+  post '/authenticate', to: 'authentication#authenticate'
 
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
