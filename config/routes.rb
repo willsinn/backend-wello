@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :v1 do
-    resources :sessions, only: [:create. :destroy]
+    resources :sessions, only: [:create, :destroy]
     # devise_for :users
     get '/user/:id', to: 'users#show'
     post '/user/new', to: 'user#create'
