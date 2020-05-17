@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
+gem 'friendly_id', '~> 5.2.4'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
