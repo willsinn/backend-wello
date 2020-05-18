@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class V1::TasksController < ApplicationController
   def index
     tasks = Card.all
     render json: tasks
