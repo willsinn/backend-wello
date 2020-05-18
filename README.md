@@ -1,5 +1,17 @@
 # README
 
+# JSON FORMAT
+
+{
+"user": {
+"email": "email",
+"password": "password"
+"password_confirmation": "password_confirmation"
+}
+}
+
+# json
+
 rails db:drop && rails db:create && rails db:migrate && rails db:seed
 
 This README would normally document whatever steps are necessary to get the

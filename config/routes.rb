@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   namespace :v1, defaults: { format: :json } do
     resources :sessions, only: [:create, :destroy]
-    get '/user/:id', to: 'users#show'
-    post '/user/new', to: 'user#create'
+    resources :users, only: [:create]
+    # get '/user/:id', to: 'users#show'
+    # post '/user/new', to: 'user#create'
 
     get '/user/:id/boards', to: 'boards#index'
     post '/user/:id/boards/new', to: 'boards#create'

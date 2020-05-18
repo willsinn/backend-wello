@@ -1,14 +1,20 @@
 class V1::UsersController < ApplicationController
-  def show
-    user = User.find(params[:id])
-    render json: user
-  end
+  # def show
+  #   user = User.find(params[:id])
+  #   render json: user
+  # end
   def create
-    user = User.create(user_params)
-    render json: user
-  end
+    @user = User.new(user_params)
+
+    if @user.save
+      render :create
+    else
+      head(:unprocessable_entity)
+    end
+    
+   end
   private
     def user_params
-      params.permit(:name)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
