@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
+  post '/user/sign_in', to: 'Devise::SessionsController#create'
+  post '/user/sign_up', to: 'Devise::RegistrationsController#create'
+
+  root to: 'boards#index'
 
   get '/user/:id/boards', to: 'boards#index'
   post '/user/:id/boards/new', to: 'boards#create'
