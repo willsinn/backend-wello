@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  devise_for :users
+namespace :v1 do
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
-  post '/user/sign_in', to: 'Devise::SessionsController#create'
-  post '/user/sign_up', to: 'Devise::RegistrationsController#create'
 
   root to: 'boards#index'
 
@@ -45,6 +44,6 @@ Rails.application.routes.draw do
   put '/label/:id/update', to: 'labels#update'
 
   post '/task_label/:id/delete', to: 'labels#destroy'
-
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
