@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
 
 namespace :v1 do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   get '/user/:id', to: 'users#show'
   post '/user/new', to: 'user#create'
 
   root to: 'boards#index'
 
   get '/user/:id/boards', to: 'boards#index'
+  root 'boards#index'
   post '/user/:id/boards/new', to: 'boards#create'
   get 'user/:id/board/:id', to: 'boards#show'
   put '/board/:id/update', to: 'boards#update'
