@@ -17,16 +17,16 @@ use Rack::Cors do
           # maybe user-authortized-token could be exposed as a header here
     end
   
-    # allow do
-    #   origins '*'
-    #   resource '/public/*', headers: :any, methods: :get
+    allow do
+      origins '*'
+      resource '/public/*', headers: :any, methods: :get
   
-    #   # Only allow a request for a specific host
-    #   resource '/api/v1/*',
-    #       headers: :any,
-    #       methods: [:get, :post, :delete, :put, :patch, :options, :head],
-    #       if: proc { |env| env['HTTP_HOST'] == 'localhost:3001' }
-    # end
+      # Only allow a request for a specific host
+      resource '/api/v1/*',
+          headers: :any,
+          methods: [:get, :post, :delete, :put, :patch, :options, :head],
+          if: proc { |env| env['HTTP_HOST'] == 'localhost:3001' }
+    end
   end
 
 run Rails.application

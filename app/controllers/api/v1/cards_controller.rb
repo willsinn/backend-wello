@@ -1,4 +1,4 @@
-class CardsController < ApplicationController
+class API::V1::CardsController < ApplicationController
   def index
     cards = Card.all 
     render json: cards

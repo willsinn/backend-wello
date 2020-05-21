@@ -1,4 +1,4 @@
-class BoardsController < ApplicationController
+class API::V1::BoardsController < ApplicationController
   def index
     boards = Board.all
     render json: boards
