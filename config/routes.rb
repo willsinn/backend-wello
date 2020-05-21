@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :api, controllers: { sessions: 'api/sessions' }
+
 
   namespace :api do
     namespace :v1 do

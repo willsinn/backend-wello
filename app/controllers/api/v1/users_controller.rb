@@ -1,4 +1,6 @@
 class API::V1::UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     user = User.find(params[:id])
     render json: user
@@ -9,6 +11,6 @@ class API::V1::UsersController < ApplicationController
   end
   private
     def user_params
-      params.permit(:name)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name)
     end
 end
