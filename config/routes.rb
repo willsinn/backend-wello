@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/user/new', to: 'user#create'
 
   get '/user/:id/boards', to: 'boards#index'
+  root 'boards#index'
   post '/user/:id/boards/new', to: 'boards#create'
   get 'user/:id/board/:id', to: 'boards#show'
   put '/board/:id/update', to: 'boards#update'
