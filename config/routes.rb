@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :api, controllers: { sessions: '/api/sessions' }
+  # devise_for :users, controllers: { sessions: '/users/sessions' }
 
   namespace :api do
     namespace :v1 do
+      devise_for :users
+
       get '/user/:id', to: 'users#show'
       post '/user/new', to: 'user#create'
 
