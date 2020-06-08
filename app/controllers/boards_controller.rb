@@ -25,8 +25,17 @@ class BoardsController < ApplicationController
   #   board = Board.find(params[:id])
   #   board.destroy
   # end
+  def archived
+    boards = Board.all
+
+    archived_boards = boards.select {|board| board.archived == true }
+    render json: archived_boards
+  end
     private
     def board_params
       params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived)
     end
 end
+
+# Board.first.cards.first.tasks.first.checklists.first.items
+

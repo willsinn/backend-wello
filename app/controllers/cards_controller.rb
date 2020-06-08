@@ -22,6 +22,12 @@ class CardsController < ApplicationController
   #   @card = Card.find(params[:id])
   #   @card.destroy
   # end
+  def archived
+    cards = Card.all
+
+    archived_cards = cards.select {|card| card.archived == true }
+    render json: archived_cards
+  end
   private
     def card_params
       params.permit(:board_id, :goal, :card_desc, :archived)

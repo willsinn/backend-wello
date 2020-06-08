@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/user/:id/boards/new', to: 'boards#create'
   get 'user/:id/board/:id', to: 'boards#show'
   put '/board/:id/update', to: 'boards#update'
+  
+  get '/user/:id/archived', to: 'boards#archived'
   # post '/user/:id/board/:id/delete', to: 'boards#destroy'
 
   get '/card/:id', to: 'cards#show'
