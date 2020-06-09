@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'user/:id/board/:id', to: 'boards#show'
   put '/board/:id/update', to: 'boards#update'
   
+
   get '/user/:id/archived', to: 'boards#archived'
+
   # post '/user/:id/board/:id/delete', to: 'boards#destroy'
 
   get '/card/:id', to: 'cards#show'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   # post '/cards/delete/:id', to: 'cards#destroy'
   get '/board/:id/cards', to: 'cards#index'
   put '/card/update/:id', to: 'cards#update'
+  get '/user/:id/archived', to: 'cards#archived'
 
 
   post '/card/:id/tasks/new', to: 'tasks#create'
