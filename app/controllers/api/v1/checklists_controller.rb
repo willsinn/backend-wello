@@ -1,4 +1,4 @@
-class ChecklistsController < ApplicationController
+class Api::V1::ChecklistsController < ApplicationController
   def index
     checklists = Checklist.all
     lists = checklists.filter do |checklist|
