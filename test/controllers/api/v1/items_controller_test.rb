@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class CardsControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::ItemsControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
-    get cards_create_url
+    get items_create_url
     assert_response :success
   end
 
   test "should get update" do
-    get cards_update_url
+    get items_update_url
     assert_response :success
   end
 
   test "should get destroy" do
-    get cards_destroy_url
+    get items_destroy_url
     assert_response :success
   end
 

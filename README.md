@@ -1,6 +1,6 @@
 # README
 
-rails db:drop && rails db:create && rails db:migrate && rails db:seed
+rails db:drop && rails db:create && rails db:migrate && rails db:seed && rails s
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
