@@ -1,12 +1,7 @@
 class Api::V1::ChecklistsController < ApplicationController
   def index
     checklists = Checklist.all
-    lists = checklists.filter do |checklist|
-      if checklist.task_id == params[:id].to_i
-        checklist
-      end
-    end
-    render json: lists
+    render json: checklists
   end
 
   def show
@@ -15,7 +10,7 @@ class Api::V1::ChecklistsController < ApplicationController
   end
 
   def create
-    checklist = Checklist.create(task_id: params[:task_id], title: params[:title])
+    checklist = Checklist.create(task_id: checklist_params[:task_id], title: checklist_params[:title])
     render json: checklist
   end
 

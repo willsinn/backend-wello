@@ -1,7 +1,8 @@
 class Api::V1::LabelsController < ApplicationController
   def index
     labels = Label.all
-    render json: labels
+    sorted = labels.sort_by {|id| id}
+    render json: sorted
   end
   def task_labels
     task_labels = TaskLabel.all
