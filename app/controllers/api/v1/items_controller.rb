@@ -10,7 +10,7 @@ class Api::V1::ItemsController < ApplicationController
       end
     
       def create
-        item = Item.create(item_params)
+        item = Item.create(checklist_id:item_params[:checklist_id], detail: item_params[:detail], completed:item_params[:completed])
         render json: item
       end
     
