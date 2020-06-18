@@ -25,20 +25,7 @@ class Api::V1::BoardsController < ApplicationController
   #   board = Board.find(params[:id])
   #   board.destroy
   # end
-  def archived
-    boards = Board.all
-    u_id = params[:user_id]
-    a = boards.select { |b| b.u_id? }
-    byebug
-    user_boards = []
-    boards.each do |n|
-      if n.even?
-        user_boards << n
-      end
-    end
-    user_boards
-    
-  end
+   
     private
     def board_params
       params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived)
