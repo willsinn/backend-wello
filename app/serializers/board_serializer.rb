@@ -1,5 +1,5 @@
 class BoardSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :title, :board_desc, :background, :team_name, :starred, :archived
+  attributes :id, :user_id, :title, :board_desc, :background, :team_name, :starred, :archived, :cards
   has_many :cards
 
   def cards

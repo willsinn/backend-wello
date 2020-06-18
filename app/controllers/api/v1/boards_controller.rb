@@ -25,6 +25,7 @@ class Api::V1::BoardsController < ApplicationController
   #   board = Board.find(params[:id])
   #   board.destroy
   # end
+   
     private
     def board_params
       params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived)
