@@ -16,7 +16,7 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def update
-    board = Board.find(params[:id])
+    board = Board.find_by(id:params[:id])
     board.update(board_params)
     render json: board
   end
