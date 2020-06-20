@@ -5,6 +5,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :goal
       t.string :card_desc
       t.boolean :archived, default: false
+      t.string :date_archived
 
       t.timestamps
     end
