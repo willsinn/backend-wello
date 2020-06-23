@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get '/user/:id/boards', to: 'boards#index'
       post '/user/:id/boards/new', to: 'boards#create'
       get 'user/:id/board/:id', to: 'boards#show'
-      put '/board/:id/update', to: 'boards#update'
+      put '/board/update/:id', to: 'boards#update'
       # post '/user/:id/board/:id/delete', to: 'boards#destroy'
 
 
