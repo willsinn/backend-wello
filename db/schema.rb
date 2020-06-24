@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
     t.string "team_name"
     t.boolean "starred", default: false
     t.boolean "archived", default: false
+    t.string "date_archived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
     t.string "goal"
     t.string "card_desc"
     t.boolean "archived", default: false
+    t.string "date_archived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_cards_on_board_id"
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
     t.string "note"
     t.string "task_desc"
     t.boolean "archived", default: false
+    t.string "date_archived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["card_id"], name: "index_tasks_on_card_id"

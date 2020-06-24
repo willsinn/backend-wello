@@ -16,7 +16,7 @@ class Api::V1::BoardsController < ApplicationController
   end
 
   def update
-    board = Board.find_by(id:params[:id])
+    board = Board.find(params[:id])
     board.update(board_params)
     render json: board
   end
@@ -28,6 +28,6 @@ class Api::V1::BoardsController < ApplicationController
    
     private
     def board_params
-      params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived)
+      params.permit(:user_id, :title, :board_desc, :background, :team_name, :starred, :archived, :date_archived)
     end
 end

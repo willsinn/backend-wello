@@ -24,6 +24,6 @@ class Api::V1::CardsController < ApplicationController
   # end
   private
     def card_params
-      params.permit(:board_id, :goal, :card_desc, :archived)
+      params.permit(:board_id, :goal, :card_desc, :archived, :date_archived)
     end
 end

@@ -8,6 +8,8 @@ class CreateBoards < ActiveRecord::Migration[5.2]
       t.string :team_name
       t.boolean :starred, default: false
       t.boolean :archived, default: false
+      t.string :date_archived
+
 
       t.timestamps
     end

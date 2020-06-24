@@ -5,6 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :note
       t.string :task_desc
       t.boolean :archived, default: false
+      t.string :date_archived
 
       t.timestamps
     end
