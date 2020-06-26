@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
       # get '/user/:id', to: 'users#show'
-      # post '/user/new', to: 'user#create'
+      put '/user/update/:id', to: 'users#update'
 
       get '/user/:id/boards', to: 'boards#index'
       post '/user/:id/boards/new', to: 'boards#create'
