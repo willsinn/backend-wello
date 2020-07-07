@@ -1,43 +1,21 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-ruby '2.7.1'
 
-# ruby '2.6.1'
+ruby '2.6.1'
 
-gem "passenger"
-
-gem "sqlite3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+# gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
+# Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# gem 'rails', '~> 5.2.3'
-# # Use postgresql as the database for Active Record
-# gem 'pg', '>= 0.18', '< 2.0'
-# # Use Puma as the app server
-# gem 'puma', '~> 3.11'
-# # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# # gem 'jbuilder', '~> 2.5'
-# # Use Redis adapter to run Action Cable in production
-# # gem 'redis', '~> 4.0'
-# # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -45,14 +23,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise', '~> 4.7', '>= 4.7.1'
-gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
-
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
-
-# # Reduces boot times through caching; required in config/boot.rb
-# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
@@ -66,22 +38,15 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 3.10', require: false
-  gem 'capistrano-rails', '~> 1.5', require: false
-  gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-db-tasks', require: false
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-# group :development do
-#   gem 'listen', '>= 3.0.5', '< 3.2'
-#   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-#   gem 'spring'
-#   gem 'spring-watcher-listen', '~> 2.0.0'
-# end
 
+gem "passenger"
+
+gem "sqlite3"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -91,5 +56,3 @@ gem "jwt", "~> 2.1"
 gem "active_model_serializers", "~> 0.10.10"
 
 gem "faker", "~> 1.9"
-
-
