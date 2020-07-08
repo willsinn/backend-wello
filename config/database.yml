@@ -66,7 +66,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-  DATABASE_URL="wello-db.cs2pda99ijvw.us-east-1.rds.amazonaws.com"
+DATABASE_URL="wello-db.cs2pda99ijvw.us-east-1.rds.amazonaws.com"
 #
 # You can use this database configuration with:
 #
