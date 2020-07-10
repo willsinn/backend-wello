@@ -73,8 +73,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: backend-Wello_production
+#   username: backend-Wello
+#   password: <%= ENV['BACKEND-WELLO_DATABASE_PASSWORD'] %>
+
 production:
-  <<: *default
-  database: backend-Wello_production
-  username: backend-Wello
-  password: <%= ENV['BACKEND-WELLO_DATABASE_PASSWORD'] %>
+  adapter: sqlite3
+  database: db/production.sqlite3
