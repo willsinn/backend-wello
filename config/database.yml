@@ -79,14 +79,13 @@ test:
 #   username: backend-Wello
 #   password: <%= ENV['BACKEND-WELLO_DATABASE_PASSWORD'] %>
 
-# production:
-#   adapter: sqlite3
-#   database: db/production.sqlite3
-
 production:
-  database: backend-wello
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: deploy
-  password: pw
+  adapter: sqlite3
+  database: db/production.sqlite3
+# production:
+#   database: backend-wello
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   username: deploy
+#   password: pw

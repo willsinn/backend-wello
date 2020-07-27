@@ -47,7 +47,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem "passenger"
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 gem "sqlite3"
 
