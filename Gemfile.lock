@@ -51,6 +51,7 @@ GEM
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
     bcrypt (3.1.13)
+    bcrypt_pbkdf (1.0.1)
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -75,6 +76,7 @@ GEM
       activesupport
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    ed25519 (1.2.4)
     erubi (1.8.0)
     etc (1.1.0)
     faker (1.9.6)
@@ -182,12 +184,14 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.10)
   bcrypt (~> 3.1.7)
+  bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.1.0)
   byebug
   capistrano (~> 3.10)
   capistrano-db-tasks
   capistrano-rails (~> 1.5)
   capistrano-rbenv (~> 2.1)
+  ed25519 (>= 1.2, < 2.0)
   faker (~> 1.9)
   jwt (~> 2.1)
   listen (>= 3.0.5, < 3.2)
@@ -198,7 +202,8 @@ DEPENDENCIES
   rails (~> 5.2.3)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
+  sprockets-rails (~> 3.2.1)
+  sqlite3 (~> 1.4.2)
   tzinfo-data
   web-console (>= 3.3.0)
 

@@ -26,8 +26,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-gem 'ed25519', '>= 1.2', '< 2.0'
-gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+# gem 'ed25519', '>= 1.2', '< 2.0'
+# gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -52,6 +52,8 @@ end
 
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
+# gem "sqlite3", "~> 1.4.2"
+# gem 'sprockets-rails', '~> 3.2.1'
 gem "sqlite3"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
