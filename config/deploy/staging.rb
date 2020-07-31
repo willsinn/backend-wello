@@ -49,13 +49,13 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "ec2-100-26-237-18.compute-1.amazonaws.com",
-  user: "deploy",
-  roles: %w{web app},
-  ssh_options: {
-    user: "deploy", # overrides user setting above
-    keys: %w(/home/deploy/.ssh/id_rsa),
-    forward_agent: false,
-    auth_methods: %w(publickey password)
-    # password: "please use keys"
-  }
+# server "example.com",
+#   user: "user_name",
+#   roles: %w{web app},
+#   ssh_options: {
+#     user: "user_name", # overrides user setting above
+#     keys: %w(/home/user_name/.ssh/id_rsa),
+#     forward_agent: false,
+#     auth_methods: %w(publickey password)
+#     # password: "please use keys"
+#   }
