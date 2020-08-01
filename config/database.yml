@@ -12,7 +12,9 @@ test:
   database: backend_wello_test
 
 production:
-  <<: *default
-  database: backend_wello_production
-  username: deploy
-  password: pw
+  adapter: sqlite3
+  database: db/production.sqlite3
+# production:
+#   <<: *default
+#   database: backend_wello_production
+#   username: deploy
