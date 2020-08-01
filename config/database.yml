@@ -10,11 +10,11 @@ development:
 test:
   <<: *default
   database: backend_wello_test
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-# production:
-#   <<: *default
-#   database: backend_wello_production
-#   username: deploy
+  <<: *default
+  database: backend_wello_production
+  username: deploy
