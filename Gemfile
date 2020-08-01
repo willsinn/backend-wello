@@ -16,16 +16,16 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-group :development do
-  gem 'capistrano', '~> 3.10', require: false
-  gem 'capistrano-rails', '~> 1.5', require: false
-  gem 'capistrano-rbenv', '~> 2.1'
-  gem 'capistrano-db-tasks', require: false
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-end
+# group :development do
+#   gem 'capistrano', '~> 3.10', require: false
+#   gem 'capistrano-rails', '~> 1.5', require: false
+#   gem 'capistrano-rbenv', '~> 2.1'
+#   gem 'capistrano-db-tasks', require: false
+#   gem 'web-console', '>= 3.3.0'
+#   gem 'listen', '>= 3.0.5', '< 3.2'
+#   gem 'spring'
+#   gem 'spring-watcher-listen', '~> 2.0.0'
+# end
 # gem 'ed25519', '>= 1.2', '< 2.0'
 # gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
