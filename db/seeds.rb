@@ -16,3 +16,4 @@ Label.create(color:"red")
 Label.create(color:"purple")
 Label.create(color:"blue")
 
+User.create( email: "DemoWello@example.com", password: "password", name: "Demo Wello" )
