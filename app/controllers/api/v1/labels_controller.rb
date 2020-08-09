@@ -29,6 +29,6 @@ class Api::V1::LabelsController < ApplicationController
   end
   private 
     def label_params
-      params.permit(:task_id, :name, :color, :task_label_id)
+      params.permit(:user_id, :task_id, :name, :color, :task_label_id)
     end
 end
