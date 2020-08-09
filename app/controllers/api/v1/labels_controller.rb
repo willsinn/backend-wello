@@ -12,9 +12,9 @@ class Api::V1::LabelsController < ApplicationController
     label = Label.find(params[:id])
     render json: label
   end
-  
+
   def new 
-   label = Label.create(label_params)
+    label = Label.create(label_params)
     render json: label
   end
 

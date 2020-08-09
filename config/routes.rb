@@ -38,10 +38,10 @@ Rails.application.routes.draw do
       post '/items/:id/delete', to: 'items#destroy'
 
 
-      post '/user/:id/label/new', to: 'labels#new'
       get '/labels', to: 'labels#index'
       get '/task_labels', to: 'labels#task_labels'
       get '/label/:id', to: 'labels#show'
+      post '/label/new', to: 'labels#new'
       post '/task/:id/label/:id', to: 'labels#create'
       put '/label/:id/update', to: 'labels#update'
 

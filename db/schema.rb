@@ -58,10 +58,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
   end
 
   create_table "labels", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_labels_on_user_id"
   end
 
   create_table "task_labels", force: :cascade do |t|
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_073645) do
   add_foreign_key "cards", "boards"
   add_foreign_key "checklists", "tasks"
   add_foreign_key "items", "checklists"
+  add_foreign_key "labels", "users"
   add_foreign_key "task_labels", "labels"
   add_foreign_key "task_labels", "tasks"
   add_foreign_key "tasks", "cards"
