@@ -25,5 +25,3 @@ throw response;
 }).then(JSONresponse => console.log(JSONresponse))
 This README would normally document whatever steps are necessary to get the
 application up and running.
-
-- ...
